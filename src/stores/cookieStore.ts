@@ -24,7 +24,7 @@ export function setCookie({ cookies, key, value }: SetCookieArgs) {
 }
 
 async function setCookieRest(key: string, value: unknown) {
-	const res = await fetch('http://localhost:5173/api/cookie', {
+	const res = await fetch(`${window.location.origin}/api/cookie`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
