@@ -38,7 +38,7 @@ async function setCookieRest(key: string, value: unknown) {
 
 type CookieStore<T> = Omit<Writable<T>, 'update'>;
 
-export async function createCookieStore<T>(key: string) {
+export function createCookieStore<T>(key: string) {
 	const derivedStore = derived(page, ($page) => $page.data[key]);
 
 	const set = async (v: T) => {
